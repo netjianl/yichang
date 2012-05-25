@@ -7,3 +7,5 @@ yichang.mdb
 config.ini
 *.exe
 *.rar
+*.map
+*.drc
