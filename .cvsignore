@@ -1,0 +1,9 @@
+backup
+add_xl
+bin
+data
+log
+yichang.mdb
+config.ini
+*.exe
+*.rar
