@@ -826,7 +826,7 @@ begin
   if(not aQuery.IsEmpty)then
     magnification := aquery.Fields[0].AsFloat;
 
-  sSql := 'SELECT Max(dd.YGGL), Avg(dd.YGGL) ' +
+  sSql := 'SELECT Max(dd.YGGL), Avg(dd.YGGL), Min(dd.YGGL) ' +
     ' FROM gruser.DATA_sslsd dd ' +
     ' WHERE (dd.CLDBH=' + #39 + cldbh + #39 + ')' +
     '         AND (dd.SJSJ>to_date(' + #39 + formatdatetime('yyyy-mm-dd', beginDay - 1) + #39 + ',' +
@@ -837,7 +837,8 @@ begin
   aquery := runSql(sSql);
   if(not aQuery.IsEmpty) then
     result := floattostr(aQuery.Fields[0].asfloat * magnification) + ' ' +
-      floattostr(aQuery.Fields[1].asfloat * magnification)
+      floattostr(aQuery.Fields[1].asfloat * magnification) + ' ' +
+      floattostr(aQuery.Fields[2].asfloat * magnification)
   else
     result :='';
 end;
