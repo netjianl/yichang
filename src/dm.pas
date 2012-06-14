@@ -313,7 +313,7 @@ var
 begin
   sSql := 'select count(*) from gruser.yccl_ycsj where zdljdz = ' +
     // #39 +
-  '(select zdljdz from ' + aIniConfig.V_NCYHXX + 'where cldbh = ' +
+  '(select zdljdz from ' + aIniConfig.V_NCYHXX + ' where cldbh = ' +
     #39 + cldbh + #39 + ')'
     //+ #39
   + ' and ycfssj > to_date('
@@ -819,7 +819,7 @@ var
   aQuery: TAdoQuery;
   magnification: real;
 begin
-  sSql := 'select ctbb*ptbb from '+ aIniConfig.V_NCYHXX + 
+  sSql := 'select ctbb*ptbb from '+ aIniConfig.V_NCYHXX + ' vn ' +
     ' where vn.cldbh = ' + #39 + cldbh + #39;
   aquery := runSql(sSql);
   magnification := 0;
@@ -863,8 +863,8 @@ begin
     'tj_dlxx.SJLX=20 ' +
     ' and cldbh = ' + #39 + cldbh + #39 +
     ' group by cldbh) ' +
-    't1,' + aIniConfig.V_NCYHXX + 
-    'WHERE (tj_dlxx.cldbh = t1.cldbh and ' +
+    't1,' + aIniConfig.V_NCYHXX +
+    ' WHERE (tj_dlxx.cldbh = t1.cldbh and ' +
     'tj_dlxx.zxzdl < t1.avg_zxzdl* ' + aPercent + ' ' +
     'and vn.CLDBH = tj_dlxx.cldbh  and t1.avg_zxzdl>99 ' +
     'and vn.CLDBH = t1.cldbh ' +
@@ -921,7 +921,7 @@ begin
     ' to_char(ycjssj,' + #39 + 'yyyy-mm-dd hh24:mi' + #39 + ') ycjssj' +
     ' from gruser.yccl_ycsj where zdljdz = ' +
     // #39 +
-  '(select zdljdz from ' + aIniConfig.V_NCYHXX + 
+  '(select zdljdz from ' + aIniConfig.V_NCYHXX +
     #39 + cldbh + #39 + ')'
     //+ #39
   + ' and ycfssj > to_date('
@@ -1008,7 +1008,7 @@ begin
     '             to_char(ycjssj,' + #39 + 'yyyy-mm-dd hh24:mi' + #39 + ') ycjssj' +
     '        from gruser.yccl_ycsj ' +
     '        where zdljdz = ' +
-    '              (select zdljdz from '+ aIniConfig.V_NCYHXX + 
+    '              (select zdljdz from '+ aIniConfig.V_NCYHXX +
     '                  where cldbh = ' + #39 + cldbh + #39 +
     '                      and ptbb > 1' +
     '              )'
@@ -1043,7 +1043,7 @@ begin
     '             to_char(ycjssj,' + #39 + 'yyyy-mm-dd hh24:mi' + #39 + ') ycjssj' +
     '        from gruser.yccl_ycsj ' +
     '        where zdljdz = ' +
-    '              (select zdljdz from '+ aIniConfig.V_NCYHXX + 
+    '              (select zdljdz from '+ aIniConfig.V_NCYHXX +
     '                  where cldbh = ' + #39 + cldbh + #39 +
    // '                      and ptbb > 1' +
   '              )'
