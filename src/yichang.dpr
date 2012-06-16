@@ -31,7 +31,8 @@ uses
   importRespUnit in 'importRespUnit.pas' {importRespForm},
   wait in 'wait.pas' {waitBaseForm},
   form_unblance_history in 'form_unblance_history.pas' {fm_unbance_history},
-  V_NCYHXX_unit in 'V_NCYHXX_unit.pas' {dm_userInfo: TDataModule};
+  V_NCYHXX_unit in 'V_NCYHXX_unit.pas' {dm_userInfo: TDataModule},
+  repTian2Unit in 'repTian2Unit.pas' {repTian2Form};
 
 {$R *.res}
 
@@ -47,6 +48,7 @@ begin
   Application.CreateForm(Thourcount_dm, hourcount_dm);
   Application.CreateForm(Tunbalance_dm, unbalance_dm);
   Application.CreateForm(Tdm_userInfo, dm_userInfo);
+  Application.CreateForm(TrepTian2Form, repTian2Form);
   Application.Run;
   //sysLog.Free;
 end.

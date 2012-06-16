@@ -16,14 +16,14 @@ object repTian2Form: TrepTian2Form
   TextHeight = 12
   object Label1: TLabel
     Left = 8
-    Top = 384
+    Top = 360
     Width = 12
     Height = 12
     Caption = #20174
   end
   object Label2: TLabel
     Left = 135
-    Top = 384
+    Top = 360
     Width = 12
     Height = 12
     Caption = #21040
@@ -51,7 +51,7 @@ object repTian2Form: TrepTian2Form
   end
   object dtpBegin: TDateTimePicker
     Left = 24
-    Top = 378
+    Top = 354
     Width = 89
     Height = 20
     Date = 39630.653550706020000000
@@ -60,7 +60,7 @@ object repTian2Form: TrepTian2Form
   end
   object dtpEnd: TDateTimePicker
     Left = 150
-    Top = 379
+    Top = 355
     Width = 91
     Height = 20
     Date = 39721.653550706020000000
@@ -69,7 +69,7 @@ object repTian2Form: TrepTian2Form
   end
   object Button1: TButton
     Left = 248
-    Top = 376
+    Top = 352
     Width = 75
     Height = 25
     Caption = #24320#22987
@@ -78,7 +78,7 @@ object repTian2Form: TrepTian2Form
   end
   object Memo1: TMemo
     Left = 344
-    Top = 376
+    Top = 352
     Width = 593
     Height = 281
     Lines.Strings = (
@@ -87,7 +87,7 @@ object repTian2Form: TrepTian2Form
   end
   object cldbhMemo: TMemo
     Left = 24
-    Top = 416
+    Top = 392
     Width = 281
     Height = 241
     TabOrder = 4
@@ -160,6 +160,16 @@ object repTian2Form: TrepTian2Form
     Caption = #21152#20837
     TabOrder = 7
     OnClick = Button3Click
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 656
+    Width = 1055
+    Height = 19
+    Panels = <
+      item
+        Width = 50
+      end>
   end
   object FindDialog1: TFindDialog
     OnFind = FindDialog1Find

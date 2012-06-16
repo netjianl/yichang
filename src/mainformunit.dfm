@@ -582,6 +582,10 @@ object Form1: TForm1
         Caption = #30000
         OnClick = N15Click
       end
+      object N19: TMenuItem
+        Caption = #30000'2'
+        OnClick = N19Click
+      end
       object N16: TMenuItem
         Caption = #30005#21387#30005#27969#19981#24179#34913#25253#34920
         OnClick = N16Click

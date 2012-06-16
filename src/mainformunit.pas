@@ -81,6 +81,7 @@ type
     menuDePolar: TMenuItem;
     Button6: TButton;
     N18: TMenuItem;
+    N19: TMenuItem;
     procedure Button1Click(Sender: TObject);
     procedure DBGrid1TitleClick(Column: TColumn);
     procedure Button3Click(Sender: TObject);
@@ -110,6 +111,7 @@ type
     procedure N16Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure N18Click(Sender: TObject);
+    procedure N19Click(Sender: TObject);
   private
     { Private declarations }
     FdoubleClickTime: integer;
@@ -137,7 +139,7 @@ uses dm, multiMeterUserUnit, multiMeterUserListUnit, oneUserYichange,
   TrepTianUnit, iniConfig, AlarmContentEdit, DBGridExp, MessageBoxUnit,
   BZip2, shellapi, dm_data_dlsd, dm_hourcount, form_hourcount, ADODB,
   dm_unbalance, houtcount_view, fm_unblance, importRespUnit,
-  form_unblance_history, V_NCYHXX_unit;
+  form_unblance_history, V_NCYHXX_unit, repTian2Unit;
 
 {$R *.dfm}
 
@@ -959,6 +961,16 @@ begin
   end;
 end;
 
+
+procedure TForm1.N19Click(Sender: TObject);
+begin
+   with TrepTian2Form.Create(self) do
+   try
+     showModal;
+   finally
+     free;
+   end;
+end;
 
 end.
 

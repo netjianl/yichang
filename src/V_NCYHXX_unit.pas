@@ -149,7 +149,7 @@ var
   aQuery: TAdoQuery;
 begin
   sSql := 'select cldbh from ' + aIniConfig.V_NCYHXX +
-    'where JLFS=10 or JLFS=20';
+    ' where JLFS=10 or JLFS=20';
   aquery := DataModule1.runSql(sSql);
   aQuery.First;
   while not aQuery.Eof do

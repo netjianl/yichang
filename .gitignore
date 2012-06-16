@@ -9,3 +9,5 @@ config.ini
 *.rar
 *.map
 *.drc
+*.~*
+*.ddp

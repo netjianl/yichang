@@ -22,6 +22,7 @@ type
     Button2: TButton;
     FindDialog1: TFindDialog;
     Button3: TButton;
+    StatusBar1: TStatusBar;
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -55,14 +56,21 @@ begin
     exit;
   end;
 
-  for i:=0 to cldbhMemo.Lines.Count -1 do
-  begin
-      str := dm_userInfo.getUserInfo(cldbhMemo.lines[i]) +
-             DataModule1.getTianRep(cldbhMemo.lines[i],
-                 dtpBegin.Date, dtpEnd.Date);
-      memo1.Lines.Add(str);
+  try
+    Button1.Enabled := false;
+    for i:=0 to cldbhMemo.Lines.Count -1 do
+    begin
+        str := dm_userInfo.getUserInfo(cldbhMemo.lines[i]) +
+               DataModule1.getTianRep(cldbhMemo.lines[i],
+                   dtpBegin.Date, dtpEnd.Date);
+        memo1.Lines.Add(str);
+        StatusBar1.Panels[0].Text := inttostr(i) + '/' + inttostr(cldbhMemo.Lines.Count);
+        Application.ProcessMessages;
+    end;
+    memo1.Lines.SaveToFile('.\tian2.txt');
+  finally
+    button1.Enabled := true;
   end;
-  memo1.Lines.SaveToFile('.\tian2.txt');
 end;
 
 procedure TrepTian2Form.FormShow(Sender: TObject);
