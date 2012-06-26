@@ -69,6 +69,23 @@ begin
     '             dd.BXDY, dd.CXDY, dd.AXDL, dd.BXDL, dd.CXDL, vn.XYDJ' +
     '  FROM gruser.DATA_SSLSD dd, '+ aIniConfig.V_NCYHXX + ' vn' +
     '  WHERE '+
+    '          ( ' +
+    '                (dd.AXDY<52) or (dd.CXDY<52) ' +
+    '          ) AND' +
+    '          (dd.CLDBH=vn.CLDBH) AND ' +
+    '          (dd.SJSJ>= to_date(' +
+                                  #39 + formatdatetime('yyyy-mm-dd', aday - 1) + #39 + ',' +
+                                                       #39 + 'yyyy-mm-dd' + #39 + ') and ' +
+    '　　　　　dd.SJSJ<to_date(' +
+                               #39 + formatdatetime('yyyy-mm-dd', aday + 1) + #39 + ',' +
+                               #39 + 'yyyy-mm-dd' + #39 + ')) and ' +
+    '          (dd.PTBB>1) ' +
+    '  ORDER BY vn.XYDJ, vn.BMMC, vn.KHJH';
+  {
+    'SELECT vn.KHJH, vn.KHMC, vn.KXMC, vn.BMMC, vn.DBJH, dd.SJSJ, dd.AXDY, ' +
+    '             dd.BXDY, dd.CXDY, dd.AXDL, dd.BXDL, dd.CXDL, vn.XYDJ' +
+    '  FROM gruser.DATA_SSLSD dd, '+ aIniConfig.V_NCYHXX + ' vn' +
+    '  WHERE '+
     '          (  (((dd.AXDY<85) or (dd.CXDY<85)) AND (dd.BXDY=0))'+
     '             OR'+
     '             ((dd.BXDY=0) AND ((dd.AXDY<55) or (dd.CXDY<55)) AND '+
@@ -83,6 +100,7 @@ begin
                                #39 + 'yyyy-mm-dd' + #39 + ')) and ' +
     '          (dd.PTBB>1) ' +
     '  ORDER BY vn.XYDJ, vn.BMMC, vn.KHJH';
+    }
 {
   sSql := 'SELECT vn.KHJH, vn.KHMC, vn.KXMC, vn.BMMC, vn.DBJH, dd.SJSJ, dd.AXDY, ' +
     ' dd.BXDY, dd.CXDY, dd.AXDL, dd.BXDL, dd.CXDL, vn.XYDJ' +
