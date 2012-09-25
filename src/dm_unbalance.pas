@@ -70,7 +70,8 @@ begin
     '  FROM gruser.DATA_SSLSD dd, '+ aIniConfig.V_NCYHXX + ' vn' +
     '  WHERE '+
     '          ( ' +
-    '                (dd.AXDY<52) or (dd.CXDY<52) ' +
+    '                (dd.BXDY=0) and ((dd.AXDY<90)or(dd.CXDY<90)) ' +
+    '                (dd.BXDY>0) and ((dd.AXDY<55)or(dd.CXDY<55)) ' +
     '          ) AND' +
     '          (dd.CLDBH=vn.CLDBH) AND ' +
     '          (dd.SJSJ>= to_date(' +
